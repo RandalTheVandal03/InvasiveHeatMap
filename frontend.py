@@ -4,6 +4,8 @@ import pyglet
 window = pyglet.window.Window(1280, 720)
 window.set_caption("Welcome Screen")
 
+image = pyglet.resource.image('animalpics.jpg')
+
 label = pyglet.text.Label('Endangered Map',
                           font_name='Arial',
                           font_size=36,
@@ -14,6 +16,7 @@ label = pyglet.text.Label('Endangered Map',
 @window.event
 def on_draw():
     window.clear()
+    image.blit(0, 0)
     label.draw()
 
 music = pyglet.resource.media('music.mp3')
