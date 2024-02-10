@@ -19,7 +19,7 @@ def on_draw():
     image.blit(0, 0)
     label.draw()
 
-music = pyglet.resource.media('music.mp3')
+music = pyglet.resource.media('Music/National_Anthem.mp3')
 music.play()
 
 pyglet.app.run()
