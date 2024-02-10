@@ -1,12 +1,13 @@
 # Dean and Sag
 import pyglet
 
-window = pyglet.window.Window()
+window = pyglet.window.Window(1280, 720)
+window.set_caption("Welcome Screen")
 
-label = pyglet.text.Label('Hello, world',
-                          font_name='Times New Roman',
+label = pyglet.text.Label('Endangered Map',
+                          font_name='Arial',
                           font_size=36,
-                          x=window.width//2, y=window.height//2,
+                          x=window.width//2, y=window.height//1.5,
                           anchor_x='center', anchor_y='center')
 
 
@@ -14,6 +15,9 @@ label = pyglet.text.Label('Hello, world',
 def on_draw():
     window.clear()
     label.draw()
+
+music = pyglet.resource.media('music.mp3')
+music.play()
 
 pyglet.app.run()
 

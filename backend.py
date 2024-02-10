@@ -12,14 +12,19 @@ StateSpecies = {}
 #Iterates through every single file and inserts the metadata into the StateSpecies dictionary
 for fileName in os.scandir(directory):
     if fileName.is_file():
-        file = Path(fileName).stem
-        with open('fileName', mode ='r')as file:
+        fileStem = Path(fileName).stem
+        with open(Path(fileName), mode ='r') as file:
             csvFile = csv.reader(file)
-            tempList = []
+            AnimalList = []
             for lines in csvFile:
-                tempList = lines
-            print(tempList)
+                AnimalList.append(lines)
+            
+            StateSpecies[fileStem.lower()] = AnimalList
 
+for list in StateSpecies['alaska']:
+    for list2 in list:
+        print(list2 , end=" ")
+    print()
 
 '''
 with open('States/Florida.csv', mode ='r')as file:
