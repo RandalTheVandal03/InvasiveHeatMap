@@ -1,7 +1,7 @@
 # Dean and Sag
 import tkinter
 import pyglet
-from pyglet.window import  mouse
+from pyglet.window import mouse
 import customtkinter
 from PIL import Image, ImageTk
 
@@ -9,12 +9,6 @@ window = pyglet.window.Window(1280, 720)
 window.set_caption("Welcome Screen")
 
 
-<<<<<<< HEAD
-label = pyglet.text.Label('Endangered Map',
-                          font_name='Arial',
-                          font_size=36,
-                          x=window.width//2, y=window.height//1.3,
-=======
 image = pyglet.resource.image('Images/pbear.jpg')
 birds = pyglet.resource.image("Images/brds.png")
 pyglet.font.add_file('Images/blow.ttf')
@@ -27,7 +21,6 @@ label = pyglet.text.Label('Endangered Species Map',
                           bold = True,
                           color = (0, 166, 210, 255),
                           x=window.width//2, y=window.height//2 + 285,
->>>>>>> 3f0bb19c4bc1d8e63948e077a703cf84b4b8a0db
                           anchor_x='center', anchor_y='center')
 
 label_shadow = pyglet.text.Label('Endangered Species Map',
@@ -71,7 +64,7 @@ def on_mouse_press(x, y, button, modifiers):
         if 470 <= x <= 805:
             if 65 <= y <= 200:
                 window.close()
-                
+
 
 music = pyglet.resource.media('Music/National_Anthem.mp3')
 music.play()
