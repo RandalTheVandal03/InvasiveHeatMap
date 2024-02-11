@@ -21,6 +21,7 @@ for fileName in os.scandir(directory):
             
             StateSpecies[fileStem.lower()] = AnimalList
 
+#As the name sugests, returns the state Data for each endangered species
 def getStateData(Name):
     return StateSpecies[Name]
 

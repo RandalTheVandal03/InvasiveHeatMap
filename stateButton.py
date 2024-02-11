@@ -1,7 +1,9 @@
 from backend import *
+from state import *
 
 class state:
     def __init__(self, lw, rw, th, bh, name):
+        #Basic variables, sets the hitboxes for the buttons and gets the statename and metadata
         self.leftBound = lw
         self.rightBound = rw
         self.bottomBound = bh
@@ -9,17 +11,22 @@ class state:
         self.stateName = str(name).lower()
         self.dataSet = getStateData(self.stateName)
 
+    #Current function when it is clicked, will be changed to send Metadata to a different tyle
     def onClicked(self):
-        print("Clicked " + self.stateName)    
+        print("Clicked " + self.stateName)
+        info(self.dataSet, self.stateName)
+
         for list in self.dataSet:
             for list2 in list:
                 print(list2 , end=" ")
             print()
 
+    #Checks if the mouse is in the hitbox of the state
     def isClicked(self, mouseX, mouseY):
         if (self.leftBound <= mouseX <= self.rightBound) and (self.bottomBound <= mouseY <= self.topBound):
             self.onClicked()
             
+#Instantiates all 50 states into buttons, not part of the state class. Returns a list of all 50 state buttons
 def stateInstantiation():
     stateButtonList = []
     stateButtonList.append(state(793, 841, 112, 36, 'Florida'))
@@ -73,7 +80,4 @@ def stateInstantiation():
     stateButtonList.append(state(51, 169, 626-114, 626-156, 'Oregon'))
     stateButtonList.append(state(405, 510, 626-210, 626-258, 'Nebraska'))
 
-
-
     return stateButtonList
-    

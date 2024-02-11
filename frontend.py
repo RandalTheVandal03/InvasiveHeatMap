@@ -1,13 +1,11 @@
 # Dean and Sag
-import tkinter
 import pyglet
 from pyglet.window import mouse
-import customtkinter
-from PIL import Image, ImageTk
+from CoordMap import *
+
 
 window = pyglet.window.Window(1280, 720)
 window.set_caption("Welcome Screen")
-
 
 image = pyglet.resource.image('Images/pbear.jpg')
 birds = pyglet.resource.image("Images/brds.png")
@@ -64,10 +62,11 @@ def on_mouse_press(x, y, button, modifiers):
         if 470 <= x <= 805:
             if 65 <= y <= 200:
                 window.close()
+                mapSpawn()
 
 
-music = pyglet.resource.media('Music/National_Anthem.mp3')
-music.play()
+#music = pyglet.resource.media('Music/National_Anthem.mp3')
+#music.play()
 
 pyglet.app.run()
 
