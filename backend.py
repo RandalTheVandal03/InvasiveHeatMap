@@ -21,14 +21,12 @@ for fileName in os.scandir(directory):
             
             StateSpecies[fileStem.lower()] = AnimalList
 
-for list in StateSpecies['alaska']:
-    for list2 in list:
-        print(list2 , end=" ")
-    print()
+def getStateData(Name):
+    return StateSpecies[Name]
 
-'''
-with open('States/Florida.csv', mode ='r')as file:
-  csvFile = csv.reader(file)
-  for lines in csvFile:
-        print(lines)
-        '''
+# #Mainly For Debugging Purposes, gets all the information from any state
+# for x in range(1):    
+#     for list in StateSpecies['alaska']:
+#         for list2 in list:
+#             print(list2 , end=" ")
+#         print()
